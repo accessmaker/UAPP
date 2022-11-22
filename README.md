@@ -3,7 +3,6 @@
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 <img src="http://img.shields.io/static/v1?label=VERSION&message=0.1&color=blue&style=for-the-badge"/>
-<img src="https://img.shields.io/github/license/accessmaker/UAPP?style=for-the-badge"/>
 </p>
 
 

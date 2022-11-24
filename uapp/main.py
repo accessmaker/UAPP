@@ -1,15 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from uapp.lib.utils import check_for_py_update, format_string_output, format_package_list, check_choice
+import sys
+
+from uapp.lib.args import handle_argument, handle_arguments, helper
 
 
 def main():
-    command = check_for_py_update()
-    outdated_packages_list = format_string_output(command_output=command)
+    if len(sys.argv) <= 1:
+        helper()
 
-    packages_outdated = format_package_list(outdated_packages_list=outdated_packages_list)
-    check_choice(packages_outdated)
+    if len(sys.argv) == 2:
+        handle_argument(arg=sys.argv[1])
+    if len(sys.argv) == 3:
+        handle_arguments(sys.argv[1], sys.argv[2])
 
 
 if __name__ == '__main__':

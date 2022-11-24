@@ -19,7 +19,7 @@ setup(
     packages=find_packages('.'),
     # Start with a small number and increase it with
     # every change you make https://semver.org
-    version='0.1',
+    version='1.0',
     # Chose a license from here: https: //
     # help.github.com / articles / licensing - a -
     # repository. For example: MIT.
@@ -42,6 +42,6 @@ setup(
     # List of packages to install with this one
     install_requires=["colorama"],
     # https://pypi.org/classifiers/
-    classifiers=['Development Status :: 2 - Pre-Alpha'],
+    classifiers=['Development Status :: 5 - Production/Stable'],
     scripts=["uapp/bin/uapp"]
 )

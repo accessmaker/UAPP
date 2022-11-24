@@ -3,6 +3,7 @@
 
 
 import os
+import colorama
 from colorama import Fore
 
 
@@ -32,7 +33,7 @@ def format_string_output(command_output):
     return outdated_packages_list
 
 
-def check_choice(packages_outdated):
+def check_choice(packages_outdated, arg_package=None):
     print('\n')
     option = input("Do you want to update? (Y or n)$ ")
     if option is None:
@@ -41,19 +42,26 @@ def check_choice(packages_outdated):
     if option == 'n':
         exit()
     print('\n')
-    return update_all(packages_outdated)
+    if arg_package is None:
+        return update_all(package_list=packages_outdated)
+    else:
+        return update_pre_defined(package_list=packages_outdated, package=arg_package)
 
 
-def format_package_list(outdated_packages_list) -> list:
-    print("-"*50)
+def format_package_list(outdated_packages_list, chosen_package=None) -> list:
+    print("-" * 50)
     print(f"{Fore.YELLOW}Outdated Packages:{Fore.RESET}")
-    print("-" * 50+'\n')
+    print("-" * 50 + '\n')
     list_packages_outdated = []
     for outdated_package_str in outdated_packages_list:
         outdated_package_str = outdated_package_str.replace(',', '=')
         if outdated_package_str.count('=') > 2:
             outdated_package_str = outdated_package_str[:-2]
-        print(outdated_package_str)
+        if chosen_package is None:
+            print(outdated_package_str)
+        else:
+            if chosen_package in outdated_package_str:
+                print(outdated_package_str)
         list_packages_outdated.append(outdated_package_str)
     return list_packages_outdated
 
@@ -62,3 +70,10 @@ def update_all(package_list):
     for update in package_list:
         update = update.split('=')
         os.system(f"pip install --upgrade {update[0]} 2>/dev/null")
+
+
+def update_pre_defined(package_list, package):
+    for update in package_list:
+        if package in update:
+            update = update.split('=')
+            os.system(f"pip install --upgrade {update[0]} 2>/dev/null")

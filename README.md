@@ -2,7 +2,7 @@
 
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
-<img src="http://img.shields.io/static/v1?label=VERSION&message=1.0&color=blue&style=for-the-badge"/>
+<img src="http://img.shields.io/static/v1?label=VERSION&message=1.1&color=blue&style=for-the-badge"/>
 <img src="https://img.shields.io/github/license/accessmaker/UAPP?style=for-the-badge"/>
 </p>
 
@@ -31,6 +31,7 @@ $ uapp
 
 UAPP(Update All Python Packages):is an unofficial package manager, which makes it easy to update packages installed with pip<br>
         help, --help or -h = show uapp help options;<br>
+        version, --version = show uapp version;<br>
         check-update = Search and show available updates;<br>
         update, upgrade = Update all packages;<br>
         update package = Update the selected package.

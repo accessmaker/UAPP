@@ -9,7 +9,6 @@ from uapp.lib.args import handle_argument, handle_arguments, helper
 def main():
     if len(sys.argv) <= 1:
         helper()
-
     if len(sys.argv) == 2:
         handle_argument(arg=sys.argv[1])
     if len(sys.argv) == 3:

@@ -9,11 +9,12 @@ from colorama import Fore
 
 def check_for_py_update():
     outdated_packages_str = os.popen("pip list -o --format json").read()
-    if outdated_packages_str != '':
+    if outdated_packages_str != '[]':
         return outdated_packages_str
     else:
         print(f"All packages are up to date [{Fore.GREEN}OK{Fore.RESET}]")
         exit()
+
 
 def format_string_output(command_output):
     outdated_packages_str = command_output.replace("{", '')

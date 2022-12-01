@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import logging
 from setuptools import find_packages, setup
 
 # User-friendly description from README.md
@@ -9,8 +10,9 @@ current_directory = os.path.dirname(os.path.abspath(__file__))
 try:
     with open(os.path.join(current_directory, 'README.md'), encoding='utf-8') as f:
         long_description = f.read()
-except Exception:
+except Exception as e:
     long_description = ''
+    logging.exception(e)
 
 setup(
     # Name of the package
@@ -19,7 +21,7 @@ setup(
     packages=find_packages('.'),
     # Start with a small number and increase it with
     # every change you make https://semver.org
-    version='1.1',
+    version='1.2',
     # Chose a license from here: https: //
     # help.github.com / articles / licensing - a -
     # repository. For example: MIT.

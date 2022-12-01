@@ -37,7 +37,8 @@ def handle_arguments(arg1, arg2):
 
 def helper():
     print('''
-UAPP(Update All Python Packages):is an unofficial package manager, which makes it easy to update packages installed with pip
+UAPP(Update All Python Packages):is an unofficial package manager, which makes it easy to update packages installed with 
+pip
     OPTIONS:
         help, --help or -h = show uapp help options;
         version, --version = show uapp version;
